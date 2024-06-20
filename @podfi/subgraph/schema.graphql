@@ -1,0 +1,21 @@
+type PodcastSetup @entity(immutable: true) {
+  id: Bytes!
+  title: String! # string
+  description: String! # string
+  category: String! # string
+  creatorUsername: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UserRegistered @entity(immutable: true) {
+  id: Bytes!
+  username: String! # string
+  name: String! # string
+  bio: String! # string
+  profilePictureHash: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

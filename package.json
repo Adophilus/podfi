@@ -1,0 +1,15 @@
+{
+  "name": "podfi",
+  "scripts": {
+    "webapp:build": "pnpm --filter @podfi/webapp build",
+    "webapp:dev": "pnpm --filter @podfi/webapp dev",
+    "server:dev": "pnpm --filter @podfi/server dev",
+    "server:start": "pnpm --filter @podfi/server start",
+    "server:build": "pnpm --filter @podfi/server build",
+    "build": "pnpm webapp:build && pnpm server:build"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.11.4",
+    "hono": "^4.4.7"
+  }
+}

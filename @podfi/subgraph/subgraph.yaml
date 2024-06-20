@@ -1,0 +1,29 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Podfi
+    network: sepolia
+    source:
+      address: "0xf44BBCeD018f3403e02B5aDE987631D8eaDdbD60"
+      abi: Podfi
+      startBlock: 6146207
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - PodcastSetup
+        - UserRegistered
+      abis:
+        - name: Podfi
+          file: ./abis/Podfi.json
+      eventHandlers:
+        - event: PodcastSetup(string,string,string,string)
+          handler: handlePodcastSetup
+        - event: UserRegistered(string,string,string,string)
+          handler: handleUserRegistered
+      file: ./src/podfi.ts
